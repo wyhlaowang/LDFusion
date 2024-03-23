@@ -42,20 +42,20 @@ Then, the fused results will be saved in the ```./self_results/TNO_test/``` fold
 # Fusion Results
 Fused images on the TNO dataset
 
-<img src="doc/rs_quali.png" width="1015" height="576">
+<img src="doc/rs_quali.png" width="800">
 
 Fused images on the ROADSCENE dataset
 
-<img src="doc/tno_quali.png" width="1014" height="640">
+<img src="doc/tno_quali.png" width="800">
 
 # LDFusion
 The Framework of the proposed method. The dashed line represents the language-driven training process, while the solid box shows the inference process.
 
-<img src="doc/overview.png" width="493" height="573">
+<img src="doc/overview.png" width="300">
 
 The schematics of the fusion process in CLIP embedding space. 
 
-<img src="doc/ems.png" width="471" height="470">
+<img src="doc/ems.png" width="300">
 
 
 # Abstract
