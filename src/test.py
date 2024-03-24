@@ -146,7 +146,7 @@ if __name__ == '__main__':
 
     print('\n')
     test(dev='cuda', 
-        data_type=2, 
+        data_type=1, 
         epoch=100, 
         pt_folder='./experiments/final/')
 
