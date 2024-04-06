@@ -34,6 +34,7 @@ pip install -r requirements.txt
 ```
 
 **2. Data Preparation, inference and training**
+
 You can put your own test data directly into the ```test_imgs/TNO_test``` directory, and run ```python src/test.py```.
 
 Then, the fused results will be saved in the ```./self_results/TNO_test/``` folder.
