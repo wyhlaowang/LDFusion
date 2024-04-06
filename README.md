@@ -33,11 +33,15 @@ conda activate LDFusion
 pip install -r requirements.txt
 ```
 
-**2. Data Preparation and inference**
-
+**2. Data Preparation, inference and training**
 You can put your own test data directly into the ```test_imgs/TNO_test``` directory, and run ```python src/test.py```.
 
 Then, the fused results will be saved in the ```./self_results/TNO_test/``` folder.
+
+If you train this network with single GPU, please change the parameter ```MUL_GPU``` in ```trainer.py``` to ```False```, and run ```python src/trainer.py``` in the project directory.
+
+If multiple GPUs are used, you can run the following commands (the parameters in the commands need to be adjusted according to the hardware environment):
+```CUDA_VISIBLE_DEVICES=0,1 OMP_NUM_THREADS=8 python -m torch.distributed.launch --nproc_per_node=2 --node_rank=0 src/trainer.py```
 
 # Fusion Results
 Fused images on the TNO dataset
