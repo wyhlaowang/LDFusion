@@ -35,9 +35,11 @@ pip install -r requirements.txt
 
 **2. Data Preparation, inference and training**
 
-You can put your own test data directly into the ```test_imgs/TNO_test``` directory, and run ```python src/test.py```.
+You can put your own test data directly into the ```test_imgs/RoadScene_test``` directory, and run ```python src/test.py```. 
 
-Then, the fused results will be saved in the ```./self_results/TNO_test/``` folder.
+(Note: The weight files (*.pt) might require independent download from the repository)
+
+Then, the fused results will be saved in the ```./self_results/RoadScene_test/``` folder.
 
 If you train this network with single GPU, please change the parameter ```MUL_GPU``` in ```trainer.py``` to ```False```, and run ```python src/trainer.py``` in the project directory.
 
