@@ -79,9 +79,9 @@ def test(dev='cuda:0', data_type=2, epoch=1, pt_folder=args_config.save_dir):
     Enc, Dec, Atten = load(pt_folder, epoch, dev)
 
     if platform == 'win32':
-        data_folder = ['./test_imgs/TNO_test', 
-                       './test_imgs/RoadScene_test', 
-                       'D:/dataset/FusionData/M3FD/M3FD_Fusion']  
+        data_folder = ['D:/dataset/FusionData/TNO/tno/', 
+                       'D:/dataset/FusionData/RoadScene/', 
+                       'D:/dataset/FusionData/M3FD/M3FD_Detection/']  
     elif platform == 'linux':
         data_folder = ['./test_imgs/TNO_test', 
                        './test_imgs/RoadScene_test', 
@@ -91,8 +91,8 @@ def test(dev='cuda:0', data_type=2, epoch=1, pt_folder=args_config.save_dir):
                  './self_results/RoadScene_test/', 
                  './self_results/M3FD/']
     
-    ir_folder = ['IR', 'IR', 'ir']
-    vis_folder = ['VIS', 'VIS', 'vi']
+    ir_folder = ['ir', 'ir', 'ir']
+    vis_folder = ['vi', 'vi', 'vi']
 
     ir_path = data_folder[data_type] + '/' + ir_folder[data_type] + '/'
     vis_path = data_folder[data_type] + '/' + vis_folder[data_type] + '/'
@@ -146,7 +146,7 @@ if __name__ == '__main__':
 
     print('\n')
     test(dev='cuda', 
-        data_type=1, 
+        data_type=2, 
         epoch=100, 
         pt_folder='./experiments/final/')
 
