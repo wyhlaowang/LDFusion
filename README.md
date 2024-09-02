@@ -29,7 +29,7 @@ pip install -r requirements.txt
 ```
 (recommended cuda11.1 and torch 1.8.2)
 
-## 2. Data Preparation and running
+## 2. Data Preparation and Running
 Please put test data into the ```test_imgs``` directory (infrared images in ```ir``` subfolder, visible images in ```vi``` subfolder), and run ```python src/test.py```. 
 
 (Note: The weight files (*.pt) might require independent download from the repository)
