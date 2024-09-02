@@ -5,7 +5,7 @@
 [Yuhao Wang](https://github.com/wyhlaowang), [Lingjuan Miao](https://github.com/wyhlaowang/LDFusion), [Zhiqiang Zhou](https://github.com/bitzhouzq), [Lei Zhang](https://github.com/ZhangLeiiiii), [Yajun Qiao](https://github.com/QYJ123/)
 
 
-<img src="doc/frame.png" width="800">
+<img src="doc/frame.png" width="700">
 
 * Natural language is used to express the fusion objective, which can avoid the explicit mathematical modeling of fusion output in current losses. 
 
