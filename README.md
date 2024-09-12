@@ -45,12 +45,3 @@ From left to right are the infrared image, visible image, and the fused image ge
 # Abstract
 Infrared-visible image fusion (IVIF) has attracted much attention owing to the highly-complementary properties of the two image modalities. Due to the lack of ground-truth fused images, the fusion output of current deep-learning based methods heavily depends on the loss functions defined mathematically. As it is hard to well mathematically define the fused image without ground truth, the performance of existing fusion methods is limited. In this paper, we first propose to use natural language to express the objective of IVIF, which can avoid the explicit mathematical modeling of fusion output in current losses, and make full use of the advantage of language expression to improve the fusion performance. For this purpose, we present a comprehensive language-expressed fusion objective, and encode relevant texts into the multi-modal embedding space using CLIP. A language-driven fusion model is then constructed in the embedding space, by establishing the relationship among the embedded vectors representing the fusion objective and input image modalities. Finally, a language-driven loss is derived to make the actual IVIF aligned with the embedded language-driven fusion model via supervised training. Experiments show that our method can obtain much better fusion results than existing techniques. 
 
-# Citation
-```
-@article{wang2024infrared,
-        title    =  {Infrared and visible Image Fusion with Language-driven Loss in CLIP Embedding Space},
-        author   =  {Wang, Yuhao and Miao, Lingjuan and Zhou, Zhiqiang and Zhang, Lei and Qiao, Yajun},
-        journal  =  {arXiv preprint arXiv:2402.16267},
-        year     =  {2024}
-}
-```
