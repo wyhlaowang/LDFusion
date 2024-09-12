@@ -1,7 +1,5 @@
 # LDFusion: Infrared and Visible Image Fusion with Language-driven Loss in CLIP Embedding Space
 
-### [Paper](https://arxiv.org/abs/2402.16267) | [Code](https://github.com/wyhlaowang/LDFusion)
-
 [Yuhao Wang](https://github.com/wyhlaowang), [Lingjuan Miao](https://github.com/wyhlaowang/LDFusion), [Zhiqiang Zhou](https://github.com/bitzhouzq), [Lei Zhang](https://github.com/ZhangLeiiiii), [Yajun Qiao](https://github.com/QYJ123/)
 
 
