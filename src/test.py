@@ -67,15 +67,12 @@ def test(dev='cuda:0', pt_folder='./weight/'):
 
     print(f'Testing ... ')
 
-    ali = True
-    alirs = Resize(768)
     with torch.no_grad():
         for i in file_list:
             vis_o = read_image(vis_path + i, ImageReadMode.RGB).to(device=dev) / 255.
             ir_o = read_image(ir_path + i, ImageReadMode.GRAY).to(device=dev) / 255.
-            re_s = Resize((vis_o.shape[1:]))
-            vis = alirs(vis_o).to(device=dev) if ali else vis_o.to(device=dev)
-            ir = alirs(ir_o).to(device=dev) if ali else ir_o.to(device=dev)
+            vis = vis_o.to(device=dev)
+            ir = ir_o.to(device=dev)
             vi_1 = rgb_y(vis)
             _, H, W = vis.shape
 
@@ -83,7 +80,7 @@ def test(dev='cuda:0', pt_folder='./weight/'):
             fu = Dec(vi_c, ir_c, vi_s, ir_s)
             
             fu = fu[:,:,:H,:W].squeeze(0)
-            fu_3 = re_s(to_rgb(vis, fu))
+            fu_3 = to_rgb(vis, fu)
             cat = torch.cat([ir_o.repeat(3,1,1), vis_o, fu_3], dim=2).unsqueeze(0)
             t4d_save(fu_3.unsqueeze(0), "./results/", i, if_print=True)
             t4d_save(cat, "./results/", 'c'+i, if_print=True)
