@@ -5,13 +5,11 @@
 
 <img src="doc/frame.png" width="700">
 
-* Natural language is used to express the fusion objective, which can avoid the explicit mathematical modeling of fusion output in current losses. 
-
-* A language-driven fusion model is constructed in the embedding space, by establishing the relationship among the embedded vectors representing the fusion objective and input image modalities. 
-
-* A language-driven loss is derived to make the actual infrared-visible image fusion aligned with the embedded language-driven fusion model via supervised training. 
-
-* Our model does not require any text input during the inference stage.
+* We first propose to use nature language to express the whole objective of IVIF, which allows to avoid the complex and explicit mathematical modeling in current fusion loss functions.
+  
+* A language-driven fusion model is derived in CLIP embedding space, based on which we develop a simple yet highly effective language-driven loss for IVIF. Particularly, by introducing a novel regularization and patch filtering approach, we ensure high robustness of the trained model in practice and resolve the challenge of removing textual artifacts induced by CLIP.
+  
+* Experiments show a great improvement of fusion quality achieved by the proposed method, revealing the superiority of language in modeling of the fusion output and the potential of pre-trained vision-language model in improving the IVIF performance. 
 
 # Usage
 ## 1. Create Environment
@@ -40,6 +38,5 @@ From left to right are the infrared image, visible image, and the fused image ge
 <img src="doc/c1.png" width="800">
 <img src="doc/c4.png" width="800">
 
-# Abstract
-Infrared-visible image fusion (IVIF) has attracted much attention owing to the highly-complementary properties of the two image modalities. Due to the lack of ground-truth fused images, the fusion output of current deep-learning based methods heavily depends on the loss functions defined mathematically. As it is hard to well mathematically define the fused image without ground truth, the performance of existing fusion methods is limited. In this paper, we first propose to use natural language to express the objective of IVIF, which can avoid the explicit mathematical modeling of fusion output in current losses, and make full use of the advantage of language expression to improve the fusion performance. For this purpose, we present a comprehensive language-expressed fusion objective, and encode relevant texts into the multi-modal embedding space using CLIP. A language-driven fusion model is then constructed in the embedding space, by establishing the relationship among the embedded vectors representing the fusion objective and input image modalities. Finally, a language-driven loss is derived to make the actual IVIF aligned with the embedded language-driven fusion model via supervised training. Experiments show that our method can obtain much better fusion results than existing techniques. 
+
 
