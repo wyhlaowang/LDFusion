@@ -1,3 +1,4 @@
+<!--
 # LDFusion: Infrared and Visible Image Fusion with Language-driven Loss in CLIP Embedding Space
 
 [Yuhao Wang](https://github.com/wyhlaowang), [Lingjuan Miao](https://github.com/wyhlaowang/LDFusion), [Zhiqiang Zhou](https://github.com/bitzhouzq), [Lei Zhang](https://github.com/ZhangLeiiiii), [Yajun Qiao](https://github.com/QYJ123/)
@@ -10,7 +11,8 @@
 * A language-driven fusion model is derived in CLIP embedding space, based on which we develop a simple yet highly effective language-driven loss for IVIF. Particularly, by introducing a novel regularization and patch filtering approach, we ensure high robustness of the trained model in practice and resolve the challenge of removing textual artifacts induced by CLIP.
   
 * Experiments show a great improvement of fusion quality achieved by the proposed method, revealing the superiority of language in modeling of the fusion output and the potential of pre-trained vision-language model in improving the IVIF performance. 
-
+ -->
+ 
 # Usage
 ## 1. Create Environment
 * create conda environment
