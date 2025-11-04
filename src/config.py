@@ -1,6 +1,5 @@
 import time
 import argparse
-from sys import platform
 
 parser = argparse.ArgumentParser(description='IVIF_Fusion')
 
@@ -35,7 +34,7 @@ parser.add_argument('--gpus',
                     help='visible GPUs')
 parser.add_argument('--num_workers',
                     type=int,
-                    default=32 if platform == 'linux' else 2,
+                    default=32,
                     help='number of threads')
 parser.add_argument('--local_rank',
                     type=int,
@@ -49,11 +48,11 @@ parser.add_argument('--epochs',
                     help='epochs for training')
 parser.add_argument('--train_batch',
                     type=int,
-                    default=16 if platform=='linux' else 2,
+                    default=16,
                     help='batch size for training')
 parser.add_argument('--lr',
                     type=float,
-                    default=0.001 if platform=='linux' else 0.0002,
+                    default=0.001,
                     help='learning rate for training')
 parser.add_argument('--lr_decay_gamma',
                     type=float,
