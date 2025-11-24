@@ -25,20 +25,19 @@ class TrainData(Dataset):
         self.if_transform = if_transform
         self.if_pair = if_pair
 
-        data_dir = ['./dataset/FusionData/M3FD/M3FD_Detection/']
-        vis_folder = ['vi/']
-        ir_folder = ['ir/']       
+        vis_dir = './YOUR_DATA_DIR/vi/'
+        ir_dir = './YOUR_DATA_DIR/ir/'
 
         self.vis_file_list = []
         self.ir_file_list = []
-        for ind, ins in enumerate(data_dir):
-            vis_dir = ins + vis_folder[ind]
-            ir_dir = ins + ir_folder[ind]
-            file_ls = os.listdir(vis_dir)
-            vis_file = [vis_dir + i for i in file_ls]
-            ir_file = [ir_dir + i for i in file_ls]
-            self.vis_file_list.extend(vis_file*10)
-            self.ir_file_list.extend(ir_file*10)
+
+        file_ls = os.listdir(vis_dir)
+        vis_file = [vis_dir + i for i in file_ls]
+        ir_file = [ir_dir + i for i in file_ls]
+
+        # Repeat to ensure multiple patches can be sampled from each image
+        self.vis_file_list.extend(vis_file*10) 
+        self.ir_file_list.extend(ir_file*10)  
 
     def __len__(self):
         return len(self.vis_file_list)
