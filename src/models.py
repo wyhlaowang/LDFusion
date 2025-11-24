@@ -9,6 +9,33 @@ def weights_init_normal(m):
         torch.nn.init.normal_(m.weight.data, 0.0, 0.02)
 
 
+def get_detail(inputs):
+    diff1 = inputs[:, :, :, :-1] - inputs[:, :, :, 1:]
+    diff2 = inputs[:, :, :-1, :] - inputs[:, :, 1:, :]
+    diff3 = inputs[:, :, 1:, :-1] - inputs[:, :, :-1, 1:]
+    diff4 = inputs[:, :, :-1, :-1] - inputs[:, :, 1:, 1:]
+    return torch.norm(diff1) + torch.norm(diff2) + torch.norm(diff3) + torch.norm(diff4)
+
+
+def entropy_t4d(images, if_norm=True):
+    if if_norm:
+        mean = images.mean(dim=[-1,-2,-3], keepdim=True)
+        std = images.std(dim=[-1,-2,-3], keepdim=True)
+        images = (images - mean) / std
+
+    B, C, _, _ = images.shape
+    entropies = torch.zeros(B)
+    for i in range(B):
+        image = images[i]
+        image_flat = image.view(C, -1)
+        hist = torch.histc(image_flat, bins=256, min=0, max=1)
+        prob = hist / torch.sum(hist)
+        prob = prob[prob > 0]
+        entropies[i] = -torch.sum(prob * torch.log2(prob))
+    
+    return entropies
+
+
 class Encoder(nn.Module):
     def __init__(self, in_channels=3, dim=64, n_residual=3, n_downsample=2, style_dim=8):
         super(Encoder, self).__init__()

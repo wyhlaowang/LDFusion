@@ -21,36 +21,6 @@ from dataset import TrainData
 from vgg import VGG
 
 
-
-def entropy_t4d(images, if_norm=True):
-    if if_norm:
-        mean = images.mean(dim=[-1,-2,-3], keepdim=True)
-        std = images.std(dim=[-1,-2,-3], keepdim=True)
-        images = (images - mean) / std
-
-    B, C, _, _ = images.shape
-    entropies = torch.zeros(B)
-    for i in range(B):
-        image = images[i]
-        image_flat = image.view(C, -1)
-        hist = torch.histc(image_flat, bins=256, min=0, max=1)
-        prob = hist / torch.sum(hist)
-        prob = prob[prob > 0]
-        entropies[i] = -torch.sum(prob * torch.log2(prob))
-    
-    return entropies
-
-
-def get_detail(inputs_jit):
-    # COMPUTE total variation regularization loss
-    diff1 = inputs_jit[:, :, :, :-1] - inputs_jit[:, :, :, 1:]
-    diff2 = inputs_jit[:, :, :-1, :] - inputs_jit[:, :, 1:, :]
-    diff3 = inputs_jit[:, :, 1:, :-1] - inputs_jit[:, :, :-1, 1:]
-    diff4 = inputs_jit[:, :, :-1, :-1] - inputs_jit[:, :, 1:, 1:]
-    l2 = torch.norm(diff1) + torch.norm(diff2) + torch.norm(diff3) + torch.norm(diff4)
-    return l2
-
-
 class Trainer(object):
     def __init__(self,
                 args):
@@ -64,9 +34,6 @@ class Trainer(object):
         self.prompt_weight_p = 10
         self.perception_weight = 10
         self.patch_select = 6
-
-        # loss
-        self.mse_loss = torch.nn.MSELoss(reduction='none')
 
         # device
         self.cuda = torch.cuda.is_available()
@@ -292,19 +259,14 @@ class Trainer(object):
                 PD = sample['prompt_dir'].to(device=self.dev)
                 B, C, H, W = X1.shape
 
-                # -------------------------------
-                #  Train Encoders and Generators
-                # -------------------------------
                 self.optimizer_G.zero_grad()
 
-                # Get shared latent representation
                 c_code_1, c_code_2, s_code_1, s_code_2 = self.Enc(X1_N, X2_N)              
 
                 fusion_y = self.Dec(c_code_1, c_code_2, s_code_1, s_code_2)
                 fusion_y = fusion_y[:,:,:H,:W]
                 vi_patch, ir_patch, fu_patch = self.dynamic_cropper(X1, X2, fusion_y, 32) # at least 32 pathces 
 
-                # loss
                 vi_feature = self.clip_model.encode_image(self.clip_norm(X1))
                 ir_feature = self.clip_model.encode_image(self.clip_norm(X2))
                 fu_feature = self.clip_model.encode_image(self.clip_norm(fusion_y))
@@ -333,10 +295,6 @@ class Trainer(object):
 
                 detail = 0.002 * get_detail(fusion_y)
 
-                # tqdm update
-                if GLOBAL_RANK == 0:
-                    s = f'Train | tt:{loss:.2f} | dt:{detail:.2f} | '
-
                 if self.args.if_warm_up and self.epoch == 1:
                     self.warm_lr_G.step() 
                     self.lr_scheduler_G.step()
@@ -345,6 +303,7 @@ class Trainer(object):
                         s += f'Lr: {current_lr:.2e} | ' 
 
                 if GLOBAL_RANK == 0:
+                    s = f'Train | tt:{loss:.2f} | dt:{detail:.2f} | '
                     tqdm_bar.set_description(s)
             
             if GLOBAL_RANK == 0:
