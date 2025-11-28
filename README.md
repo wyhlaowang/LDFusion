@@ -1,3 +1,5 @@
+# [LDFusion] Official implementation for "Infrared and Visible Image Fusion with Language-driven Loss in CLIP Embedding Space"
+
 <!--
 # LDFusion: Infrared and Visible Image Fusion with Language-driven Loss in CLIP Embedding Space
 
@@ -53,7 +55,6 @@ For single-GPU training, run:
 ```
 python src/trainer.py
 ```
-
 
 
 # Examples
