@@ -6,12 +6,11 @@
 
 <!--
 [Yuhao Wang](https://github.com/wyhlaowang), [Lingjuan Miao](https://github.com/wyhlaowang/LDFusion), [Zhiqiang Zhou](https://github.com/bitzhouzq), [Lei Zhang](https://github.com/ZhangLeiiiii), [Yajun Qiao](https://github.com/QYJ123/)
- -->
 
 <p align="center">
     <img src="doc/frame.png" width="500">
 </p>
-
+ -->
 
 # ⚙️ Installation
 ## Prerequisites
