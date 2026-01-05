@@ -1,8 +1,8 @@
 # [LDFusion] Official Implementation for "Infrared and Visible Image Fusion with Language-driven Loss in CLIP Embedding Space"
 
-### 🧠 Pioneeringly Use **Natural Language** to Express the Whole Objective of Imgae Fusion 
+### 🧠 Pioneeringly Use **Natural Language** to Express Imgae Fusion Objective 
 
-### ✍️ Avoid the Complex and Explicit Mathematical Modeling in Current Fusion Loss 
+### ✍️ Avoid Complex and Explicit Mathematical Modeling in Fusion Loss 
 
 <!--
 [Yuhao Wang](https://github.com/wyhlaowang), [Lingjuan Miao](https://github.com/wyhlaowang/LDFusion), [Zhiqiang Zhou](https://github.com/bitzhouzq), [Lei Zhang](https://github.com/ZhangLeiiiii), [Yajun Qiao](https://github.com/QYJ123/)
