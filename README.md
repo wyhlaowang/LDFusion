@@ -1,5 +1,8 @@
+<!--
 # [LDFusion] Official Implementation for "Infrared and Visible Image Fusion with Language-driven Loss in CLIP Embedding Space"
-
+ -->
+# [LDFusion] Official Implementation
+ 
 ### 🧠 Pioneeringly Use **Natural Language** to Express Imgae Fusion Objective 
 
 ### ✍️ Avoid Complex and Explicit Mathematical Modeling in Fusion Loss 
