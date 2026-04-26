@@ -78,7 +78,7 @@ From left to right are the infrared image, visible image, and the fused image ge
 <img src="doc/c2.png" width="700">
 </p>
 
-
+<!--
 # Citation
 If you find our work or codes useful for your research, please cite the papers as follows:
 
@@ -90,4 +90,4 @@ year = {2025},
 booktitle = {Proceedings of the 33rd ACM International Conference on Multimedia},
 }
 ```
-
+ -->
