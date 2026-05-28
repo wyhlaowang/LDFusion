@@ -1,11 +1,23 @@
+<div align="center">
 
-# [LDFusion] Official Implementation for "Infrared and Visible Image Fusion With Language-Driven Loss and Knowledge Distillation"
+# LDFusion: Infrared and Visible Image Fusion With Language-Driven Loss and Knowledge Distillation
+
+[![Paper](https://img.shields.io/badge/Paper-IEEE-blue)](https://ieeexplore.ieee.org/document/11514124)
+[![Code](https://img.shields.io/badge/Code-GitHub-black)](https://github.com/wyhlaowang/LDFusion)
+
+[Yuhao Wang](https://github.com/wyhlaowang) ·
+[Lingjuan Miao](https://github.com/wyhlaowang/LDFusion) ·
+[Zhiqiang Zhou](https://github.com/bitzhouzq) ·
+[Lei Zhang](https://github.com/ZhangLeiiiii) ·
+[Yajun Qiao](https://github.com/QYJ123/)
+
+</div>
+
+
 
 ### 🧠 Pioneeringly Use **Natural Language** to Express Imgae Fusion Objective 
 
 ### ✍️ Avoid Complex and Explicit Mathematical Modeling in Fusion Loss 
-
-[Yuhao Wang](https://github.com/wyhlaowang), [Lingjuan Miao](https://github.com/wyhlaowang/LDFusion), [Zhiqiang Zhou](https://github.com/bitzhouzq), [Lei Zhang](https://github.com/ZhangLeiiiii), [Yajun Qiao](https://github.com/QYJ123/)
 
 <p align="center">
     <img src="doc/frame.png" width="500">
