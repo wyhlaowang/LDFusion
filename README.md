@@ -1,19 +1,17 @@
-<!--
-# [LDFusion] Official Implementation for "Infrared and Visible Image Fusion with Language-driven Loss in CLIP Embedding Space"
- -->
-# [LDFusion] Official Implementation
- 
+
+# [LDFusion] Official Implementation for "Infrared and Visible Image Fusion With Language-Driven Loss and Knowledge Distillation"
+
 ### 🧠 Pioneeringly Use **Natural Language** to Express Imgae Fusion Objective 
 
 ### ✍️ Avoid Complex and Explicit Mathematical Modeling in Fusion Loss 
 
-<!--
+
 [Yuhao Wang](https://github.com/wyhlaowang), [Lingjuan Miao](https://github.com/wyhlaowang/LDFusion), [Zhiqiang Zhou](https://github.com/bitzhouzq), [Lei Zhang](https://github.com/ZhangLeiiiii), [Yajun Qiao](https://github.com/QYJ123/)
 
 <p align="center">
     <img src="doc/frame.png" width="500">
 </p>
- -->
+
 
 # ⚙️ Installation
 ## Prerequisites
@@ -81,16 +79,16 @@ From left to right are the infrared image, visible image, and the fused image ge
 <img src="doc/c2.png" width="700">
 </p>
 
-<!--
+
 # Citation
 If you find our work or codes useful for your research, please cite the papers as follows:
 
 ```
-@inproceedings{wang2025language,
-author = {Wang, Yuhao and Miao, Lingjuan and Zhou, Zhiqiang and Zhang, Lei and Yajun, Qiao},
-title = {Infrared and Visible Image Fusion with Language-Driven Loss in CLIP Embedding Space},
-year = {2025},
-booktitle = {Proceedings of the 33rd ACM International Conference on Multimedia},
-}
+@ARTICLE{wang2026language,
+  author={Wang, Yuhao and Miao, Lingjuan and Zhou, Zhiqiang and Zhang, Lei and Qiao, Yajun},
+  journal={IEEE Transactions on Neural Networks and Learning Systems}, 
+  title={Infrared and Visible Image Fusion With Language-Driven Loss and Knowledge Distillation}, 
+  year={2026},
+  doi={10.1109/TNNLS.2026.3688448}}
 ```
- -->
+
